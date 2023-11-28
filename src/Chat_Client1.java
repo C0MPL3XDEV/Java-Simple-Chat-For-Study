@@ -20,11 +20,10 @@ public class Chat_Client1 {
                 PrintWriter pw = new PrintWriter(cSocket.getOutputStream(), true);
                 InputStreamReader isr = new InputStreamReader(cSocket.getInputStream());
                 BufferedReader br = new BufferedReader(isr);
-
-                sendString(pw, cSocket);
-                System.out.println("Message sent to the Client 2");
                 String receivedMessage = br.readLine();
                 System.out.println("Message Received from C2: " + receivedMessage);
+                sendString(pw, cSocket);
+                System.out.println("Message sent to the Client 2");
 
             } while (cSocket.isConnected());
 
@@ -35,7 +34,7 @@ public class Chat_Client1 {
     }
 
     public void sendString(PrintWriter pw, Socket cSocket) throws IOException {
-        System.out.println("Message for the Client 2: ");
+        System.out.print("Message for the Client 2: ");
         String message = in.nextLine();
         pw.println(message);
 
