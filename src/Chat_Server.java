@@ -33,6 +33,7 @@ public class Chat_Server {
         PrintWriter pw2 = new PrintWriter(client2.getOutputStream(), true);
 
         do {
+            pw1.println(".");
             String message1 = reader1.readLine();
             System.out.println(message1);
             pw2.println(message1);
